@@ -47,7 +47,7 @@ flutter pub get
 flutter run
 ```
 
-## Implemented Lectures (1 to 3)
+## Implemented Lectures (1 to 4)
 
 This project currently includes the following completed lecture demos:
 
@@ -81,12 +81,24 @@ This project currently includes the following completed lecture demos:
   - Switch toggle state handling
   - Rebuild behavior demonstration with `Consumer`
 
+### Lecture 4: Multiple State in One Model
+
+- File: `lib/Lacture4StateProviderMultipleState.dart`
+- Demonstrates how to keep related UI state together in one `AppState` model.
+- Uses one `StateProvider<AppState>` for two values:
+  - `slider` for the slider and color opacity
+  - `showPassword` for the visibility icon toggle
+- Shows how `copyWith` updates only one field while keeping the rest of the state unchanged.
+- Uses separate `Consumer` widgets with `select` so only the part of the UI that depends on a field rebuilds.
+- Compares fine-grained rebuilds with a shared state object and demonstrates why smaller consumers are more efficient.
+
 ## Home Navigation
 
 - File: `lib/home_page.dart`
 - Added a centralized Home page with buttons to open each lecture screen.
 - Navigation is implemented with `Navigator.push` and `MaterialPageRoute`.
 - App entry now starts from Home page in `lib/main.dart`.
+- Lecture 4 is now added to the home menu so all lecture demos are reachable from one place.
 
 ## Notes
 

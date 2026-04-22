@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:riverpod_statemanagement/Lacture1CopyWithMetho.dart';
 import 'package:riverpod_statemanagement/Lacture2SimpleProvider.dart';
 import 'package:riverpod_statemanagement/Lacture3StateProvider.dart';
+import 'package:riverpod_statemanagement/Lacture4StateProviderMultipleState.dart';
 
 // Central menu page: each button opens one lecture screen.
 class HomePage extends StatelessWidget {
@@ -73,6 +74,17 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const CounterApp()),
+              );
+            },
+          ),
+          _LectureButton(
+            title: 'Lecture 4: Multiple State in One Model',
+            subtitle: 'Slider + toggle using one AppState object',
+            onTap: () {
+              // Push lecture 4 multiple-state demo.
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SliderProvider()),
               );
             },
           ),

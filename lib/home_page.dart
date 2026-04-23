@@ -3,6 +3,7 @@ import 'package:riverpod_statemanagement/Lacture1CopyWithMetho.dart';
 import 'package:riverpod_statemanagement/Lacture2SimpleProvider.dart';
 import 'package:riverpod_statemanagement/Lacture3StateProvider.dart';
 import 'package:riverpod_statemanagement/Lacture4StateProviderMultipleState.dart';
+import 'package:riverpod_statemanagement/Lacture5StateNotifyProvider.dart';
 
 // Central menu page: each button opens one lecture screen.
 class HomePage extends StatelessWidget {
@@ -85,6 +86,18 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const SliderProvider()),
+              );
+            },
+          ),
+          _LectureButton(
+            title: 'Lecture 5: StateNotifierProvider',
+            subtitle:
+                'Search using StateNotifierProvider with SearchNotifier class',
+            onTap: () {
+              // Push lecture 5 state notifier provider demo.
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SearchPage()),
               );
             },
           ),

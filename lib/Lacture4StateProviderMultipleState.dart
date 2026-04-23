@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
 // One provider holds the complete lecture 4 state object.
+//
 final SliderValue = StateProvider<AppState>((ref) {
   return AppState(slider: 0.5, showPassword: false);
 });

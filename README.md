@@ -47,7 +47,7 @@ flutter pub get
 flutter run
 ```
 
-## Implemented Lectures (1 to 4)
+## Implemented Lectures (1 to 5)
 
 This project currently includes the following completed lecture demos:
 
@@ -91,6 +91,19 @@ This project currently includes the following completed lecture demos:
 - Shows how `copyWith` updates only one field while keeping the rest of the state unchanged.
 - Uses separate `Consumer` widgets with `select` so only the part of the UI that depends on a field rebuilds.
 - Compares fine-grained rebuilds with a shared state object and demonstrates why smaller consumers are more efficient.
+
+### Lecture 5: StateNotifierProvider
+
+- File: `lib/Lacture5StateNotifyProvider.dart`
+- Demonstrates managing state with `StateNotifierProvider` and a custom immutable state model.
+- Uses `SearchState` with two fields:
+  - `search` for the current text query
+  - `isOn` for switch toggle state
+- Uses `SearchNotifier` to centralize all state updates through methods:
+  - `search(String query)`
+  - `isswitch(bool isOn)`
+- Uses `copyWith` in the state model to update one field while preserving other values.
+- Demonstrates fine-grained rebuilds using `select` in separate `Consumer` widgets for search text and switch state.
 
 ## Home Navigation
 

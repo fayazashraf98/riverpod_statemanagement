@@ -4,6 +4,7 @@ import 'package:riverpod_statemanagement/Lacture2SimpleProvider.dart';
 import 'package:riverpod_statemanagement/Lacture3StateProvider.dart';
 import 'package:riverpod_statemanagement/Lacture4StateProviderMultipleState.dart';
 import 'package:riverpod_statemanagement/Lacture5StateNotifyProvider.dart';
+import 'package:riverpod_statemanagement/Lacture6/homeScreen.dart';
 
 // Central menu page: each button opens one lecture screen.
 class HomePage extends StatelessWidget {
@@ -98,6 +99,16 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const SearchPage()),
+              );
+            },
+          ),
+          _LectureButton(
+            title: 'Lecture 6: Todo With StateNotifierProvider',
+            subtitle: 'Add and remove todo items using Riverpod',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const TodoHomeScreen()),
               );
             },
           ),

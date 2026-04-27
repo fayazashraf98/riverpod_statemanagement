@@ -47,7 +47,7 @@ flutter pub get
 flutter run
 ```
 
-## Implemented Lectures (1 to 5)
+## Implemented Lectures (1 to 6)
 
 This project currently includes the following completed lecture demos:
 
@@ -105,6 +105,23 @@ This project currently includes the following completed lecture demos:
 - Uses `copyWith` in the state model to update one field while preserving other values.
 - Demonstrates fine-grained rebuilds using `select` in separate `Consumer` widgets for search text and switch state.
 
+### Lecture 6: Todo App with StateNotifierProvider
+
+- Files:
+  - `lib/Lacture6/homeScreen.dart`
+  - `lib/Lacture6/itemProvider.dart`
+  - `lib/Lacture6/item.dart`
+- Demonstrates a practical CRUD-style todo flow with `StateNotifierProvider`.
+- Uses `ItemNotifier` as a single source of truth for list operations:
+  - `addItem(String name)`
+  - `removeItem(String id)`
+  - `updateItem(String id, String name)`
+- Uses immutable list updates so UI rebuilds reliably after every state change.
+- Shows how the UI can:
+  - Watch provider state with `ref.watch(itemProvider)`
+  - Trigger state changes through `ref.read(itemProvider.notifier)`
+  - Keep dialogs and list interactions simple and predictable.
+
 ## Home Navigation
 
 - File: `lib/home_page.dart`
@@ -112,6 +129,7 @@ This project currently includes the following completed lecture demos:
 - Navigation is implemented with `Navigator.push` and `MaterialPageRoute`.
 - App entry now starts from Home page in `lib/main.dart`.
 - Lecture 4 is now added to the home menu so all lecture demos are reachable from one place.
+- Lecture 6 is also available from the home menu as a todo board demo.
 
 ## Notes
 

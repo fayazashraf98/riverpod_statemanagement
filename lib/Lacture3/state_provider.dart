@@ -105,7 +105,9 @@ class CounterApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Counter App State Provider (Stateless)")),
+      appBar: AppBar(
+        title: const Text("Counter App State Provider (Stateless)"),
+      ),
       body: Column(
         children: [
           // Switch section: reads and updates `isOn` provider.

@@ -184,7 +184,7 @@ This project currently includes the following completed lecture demos:
 - Added a centralized Home page with buttons to open each lecture screen.
 - Navigation is implemented with `Navigator.push` and `MaterialPageRoute` (Lectures 1-6) and `Navigator.pushNamed` (Lecture 7).
 - App entry now starts from Home page in `lib/main.dart`.
-- All 7 lectures are now accessible from the home menu.
+- All 9 lectures are now accessible from the home menu.
 - Lecture 7 uses a named route (`/lecture7`) defined in `main.dart` for routing.
 - Lecture 8 uses a named route (`/lecture8`) defined in `main.dart` for routing.
 - Lecture 9 uses a named route (`/lecture9`) defined in `main.dart` for routing.

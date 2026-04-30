@@ -4,7 +4,7 @@ import 'package:riverpod_statemanagement/Lacture2SimpleProvider.dart';
 import 'package:riverpod_statemanagement/Lacture3StateProvider.dart';
 import 'package:riverpod_statemanagement/Lacture4StateProviderMultipleState.dart';
 import 'package:riverpod_statemanagement/Lacture5StateNotifyProvider.dart';
-import 'package:riverpod_statemanagement/Lacture6/homeScreen.dart';
+import 'package:riverpod_statemanagement/Lacture6/homeTodoList.dart';
 
 // Central menu page: each button opens one lecture screen.
 class HomePage extends StatelessWidget {
@@ -110,6 +110,13 @@ class HomePage extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (_) => const TodoHomeScreen()),
               );
+            },
+          ),
+          _LectureButton(
+            title: 'Lecture 7: Favorites',
+            subtitle: 'Filter and toggle favorites using Riverpod state',
+            onTap: () {
+              Navigator.pushNamed(context, '/lecture7');
             },
           ),
         ],

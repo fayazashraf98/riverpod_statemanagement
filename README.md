@@ -122,14 +122,40 @@ This project currently includes the following completed lecture demos:
   - Trigger state changes through `ref.read(itemProvider.notifier)`
   - Keep dialogs and list interactions simple and predictable.
 
+### Lecture 7: Favorites with Filter and Toggle
+
+- Files:
+  - `lib/Lacture7/home_favorite.dart` (Main UI)
+  - `lib/Lacture7/Provider/favorite_provider.dart` (FavoriteNotifier & StateNotifierProvider)
+  - `lib/Lacture7/Provider/favorite_state.dart` (FavoriteState model)
+  - `lib/Lacture7/Model/favorite_items.dart` (favoriteItem model)
+- Demonstrates a practical use case combining search/filter functionality with state management.
+- Features:
+  - Add sample items (fruits) using FloatingActionButton
+  - Real-time search filtering as you type in the TextField
+  - Toggle favorite status by clicking the heart icon
+  - Immutable state updates with filtering logic
+- Key concepts:
+  - `StateNotifierProvider` manages three related state fields:
+    - `allItems`: Complete list of items
+    - `filteredItems`: Results after applying search query
+    - `search`: Current search query text
+  - `FavoriteNotifier` handles state transitions through methods:
+    - `addItems()`: Adds sample fruit items to the list
+    - `updateSearch(String query)`: Filters items by name and updates search text
+    - `toggleFavorite(int id)`: Marks/unmarks an item as favorite and reapplies filter
+  - Uses `ref.watch()` for watching filtered items and triggering rebuilds
+  - Uses `ref.read()` in callbacks for non-reactive state updates (add, search, toggle)
+  - Demonstrates efficient rebuilds by watching only `filteredItems` instead of the entire state
+
 ## Home Navigation
 
 - File: `lib/home_page.dart`
 - Added a centralized Home page with buttons to open each lecture screen.
-- Navigation is implemented with `Navigator.push` and `MaterialPageRoute`.
+- Navigation is implemented with `Navigator.push` and `MaterialPageRoute` (Lectures 1-6) and `Navigator.pushNamed` (Lecture 7).
 - App entry now starts from Home page in `lib/main.dart`.
-- Lecture 4 is now added to the home menu so all lecture demos are reachable from one place.
-- Lecture 6 is also available from the home menu as a todo board demo.
+- All 7 lectures are now accessible from the home menu.
+- Lecture 7 uses a named route (`/lecture7`) defined in `main.dart` for routing.
 
 ## Notes
 

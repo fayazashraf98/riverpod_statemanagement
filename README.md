@@ -47,7 +47,7 @@ flutter pub get
 flutter run
 ```
 
-## Implemented Lectures (1 to 9)
+## Implemented Lectures (1 to 10)
 
 This project currently includes the following completed lecture demos:
 
@@ -178,16 +178,41 @@ This project currently includes the following completed lecture demos:
   - `AsyncValue.when` handles loading, error, and data states
   - Stream providers are useful for live updates like stock prices, sensors, or chat messages
 
+### Lecture 10: Get API Data with FutureProvider
+
+- Files:
+  - `lib/Lacture10/home_getApi.dart` (Main UI)
+  - `lib/Lacture10/provider/get_api.dart` (API provider)
+- Demonstrates how to fetch and display data from a real API endpoint using `FutureProvider`.
+- Fetches posts from `https://dummyjson.com/posts` API and displays them in a beautiful card-based list.
+- Key concepts:
+  - `FutureProvider<List<Map<String, dynamic>>>` handles async HTTP requests
+  - JSON parsing using `jsonDecode()` to convert API response to usable data
+  - Direct use of JSON maps without a model class (working with `Map<String, dynamic>`)
+  - `ref.watch(postProvider)` watches the async state and triggers rebuilds
+  - `AsyncValue.when` cleanly handles three states: loading, error, and data
+  - Error handling with status code checking and exception messages
+  - Beautiful UI with gradient cards, metadata badges, and proper text truncation
+  - Each post displays: ID, User ID, Title (2 lines max), and Body (3 lines max)
+- Features:
+  - Loading state with spinner and message
+  - Error state with icon and error message
+  - Data state with scrollable list of posts in cards
+  - Modern Material Design with rounded corners and gradients
+- Learning takeaway:
+  - How to work with raw JSON data without model classes
+  - Importance of proper error handling in API calls
+  - Building beautiful UIs with gradient backgrounds and metadata badges
+
 ## Home Navigation
 
 - File: `lib/home_page.dart`
 - Added a centralized Home page with buttons to open each lecture screen.
-- Navigation is implemented with `Navigator.push` and `MaterialPageRoute` (Lectures 1-6) and `Navigator.pushNamed` (Lecture 7).
+- Navigation is implemented with `Navigator.push` and `MaterialPageRoute` for all lectures (1-10).
 - App entry now starts from Home page in `lib/main.dart`.
-- All 9 lectures are now accessible from the home menu.
-- Lecture 7 uses a named route (`/lecture7`) defined in `main.dart` for routing.
-- Lecture 8 uses a named route (`/lecture8`) defined in `main.dart` for routing.
-- Lecture 9 uses a named route (`/lecture9`) defined in `main.dart` for routing.
+- All 10 lectures are now accessible from the home menu.
+- Each lecture button displays a title and subtitle describing what the lecture covers.
+- Consistent navigation pattern: buttons trigger `Navigator.push()` with `MaterialPageRoute` to open each lecture screen.
 
 ## Notes
 

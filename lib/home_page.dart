@@ -119,6 +119,20 @@ class HomePage extends StatelessWidget {
               Navigator.pushNamed(context, '/lecture7');
             },
           ),
+          _LectureButton(
+            title: 'Lecture 8: Future Provider',
+            subtitle: 'Load async data using FutureProvider',
+            onTap: () {
+              Navigator.pushNamed(context, '/lecture8');
+            },
+          ),
+          _LectureButton(
+            title: 'Lecture 9: Stream Provider',
+            subtitle: 'Listen to live stream updates using StreamProvider',
+            onTap: () {
+              Navigator.pushNamed(context, '/lecture9');
+            },
+          ),
         ],
       ),
     );

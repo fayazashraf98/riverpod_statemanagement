@@ -25,7 +25,7 @@ This project covers the most common Riverpod provider types:
 
 - `Provider`: Read constant or computed values that do not change over time
 - `StateProvider`: Manage simple mutable state (for example, counter or toggle)
-- `FutureProvider`: Handle one-time asynchronous operations (for example, API calls)
+- `FutureProvider`: Handle one-time asynchronous operations and expose loading, data, and error states (for example, API calls)
 - `StreamProvider`: Handle continuous async data streams (for example, chat or connectivity)
 - `StateNotifierProvider`: Manage complex business logic and state transitions
 - `autoDispose`: Automatically clean up providers when no longer used
@@ -47,7 +47,7 @@ flutter pub get
 flutter run
 ```
 
-## Implemented Lectures (1 to 6)
+## Implemented Lectures (1 to 9)
 
 This project currently includes the following completed lecture demos:
 
@@ -148,6 +148,36 @@ This project currently includes the following completed lecture demos:
   - Uses `ref.read()` in callbacks for non-reactive state updates (add, search, toggle)
   - Demonstrates efficient rebuilds by watching only `filteredItems` instead of the entire state
 
+### Lecture 8: Future Provider
+
+- Files:
+  - `lib/Lacture8/home_future.dart`
+  - `lib/Lacture8/future_provider.dart`
+- Demonstrates how to load asynchronous data using `FutureProvider`.
+- The provider returns a `FutureProvider<List<String>>` that simulates a delayed fetch and returns a list of fruit names.
+- The UI uses `provider.when(...)` to switch between loading, data, and error states.
+- The refresh button reloads the provider by invalidating it and awaiting the future again.
+- Key concepts:
+  - `ref.watch(futureProvider)` listens to the async state and rebuilds the widget
+  - `AsyncValue.when` cleanly handles loading, data, and error branches
+  - `ref.invalidate(futureProvider)` tells Riverpod to run the async task again
+  - `ref.read(futureProvider.future)` waits for the refreshed value
+  - `skipLoadingOnReload: false` keeps the loading indicator visible while reloading
+
+### Lecture 9: Stream Provider
+
+- Files:
+  - `lib/Lacture9/home_strem.dart`
+  - `lib/Lacture9/stream_provider.dart`
+- Demonstrates how to listen to live data using `StreamProvider`.
+- The stream emits a new stock price every second to mimic a live market feed.
+- The UI shows a simple stock card with the current price and a live label.
+- Key concepts:
+  - `StreamProvider<double>` exposes a stream of changing values
+  - `ref.watch(stockPriceProvider)` rebuilds the widget when a new value arrives
+  - `AsyncValue.when` handles loading, error, and data states
+  - Stream providers are useful for live updates like stock prices, sensors, or chat messages
+
 ## Home Navigation
 
 - File: `lib/home_page.dart`
@@ -156,6 +186,8 @@ This project currently includes the following completed lecture demos:
 - App entry now starts from Home page in `lib/main.dart`.
 - All 7 lectures are now accessible from the home menu.
 - Lecture 7 uses a named route (`/lecture7`) defined in `main.dart` for routing.
+- Lecture 8 uses a named route (`/lecture8`) defined in `main.dart` for routing.
+- Lecture 9 uses a named route (`/lecture9`) defined in `main.dart` for routing.
 
 ## Notes
 

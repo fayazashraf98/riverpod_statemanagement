@@ -5,8 +5,8 @@ import 'package:riverpod_statemanagement/Lacture10/provider/get_api.dart';
 // Lecture 10: UI for displaying API data with FutureProvider
 // This widget shows how to consume a FutureProvider and display the data in a beautiful card-based UI.
 // It handles loading, error, and data states cleanly using AsyncValue.when().
-class GetApi extends ConsumerWidget {
-  const GetApi({super.key});
+class GetApiHome extends ConsumerWidget {
+  const GetApiHome({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

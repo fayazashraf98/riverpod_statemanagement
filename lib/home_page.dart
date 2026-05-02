@@ -5,6 +5,10 @@ import 'package:riverpod_statemanagement/Lacture3/state_provider.dart';
 import 'package:riverpod_statemanagement/Lacture4/slider_provider.dart';
 import 'package:riverpod_statemanagement/Lacture5/search_page.dart';
 import 'package:riverpod_statemanagement/Lacture6/homeTodoList.dart';
+import 'package:riverpod_statemanagement/Lacture7/home_favorite.dart';
+import 'package:riverpod_statemanagement/Lacture8/home_future.dart';
+import 'package:riverpod_statemanagement/Lacture9/home_strem.dart';
+import 'package:riverpod_statemanagement/Lacture10/home_getApi.dart';
 
 // Central menu page: each button opens one lecture screen.
 class HomePage extends StatelessWidget {
@@ -116,21 +120,40 @@ class HomePage extends StatelessWidget {
             title: 'Lecture 7: Favorites',
             subtitle: 'Filter and toggle favorites using Riverpod state',
             onTap: () {
-              Navigator.pushNamed(context, '/lecture7');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const FavoriteHomeScreen()),
+              );
             },
           ),
           _LectureButton(
             title: 'Lecture 8: Future Provider',
             subtitle: 'Load async data using FutureProvider',
             onTap: () {
-              Navigator.pushNamed(context, '/lecture8');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const FutureScreen()),
+              );
             },
           ),
           _LectureButton(
             title: 'Lecture 9: Stream Provider',
             subtitle: 'Listen to live stream updates using StreamProvider',
             onTap: () {
-              Navigator.pushNamed(context, '/lecture9');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const StreamHome()),
+              );
+            },
+          ),
+          _LectureButton(
+            title: 'Lecture 10: Get API Data',
+            subtitle: 'Fetch data from API using FutureProvider',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const GetApiHome()),
+              );
             },
           ),
         ],

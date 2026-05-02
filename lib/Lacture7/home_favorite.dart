@@ -16,8 +16,8 @@ import 'package:riverpod_statemanagement/Lacture7/Provider/favorite_provider.dar
 /// - `ref.watch()` for reading provider state and rebuilding when it changes
 /// - `ref.read()` for triggering state updates in callbacks (addItems, updateSearch, toggleFavorite)
 /// - Immutable state updates using copyWith pattern
-class MyWidget extends ConsumerWidget {
-  const MyWidget({super.key});
+class FavoriteHomeScreen extends ConsumerWidget {
+  const FavoriteHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
